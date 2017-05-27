@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font: 14px/1.6 Arial, sans-serif;
+      color: #333;
+      background: #ccc;
+      text-align: justify;
+    }
+    .wrap {
+      margin-bottom: 50px;
+      padding: 70px 56px;
+      border-radius: 4px;
+      background: #fff;
+      box-sizing: border-box;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    }
+    .layout {
+      width: 900px;
+      margin: 0 auto;
+    }
+    .float-left {
+      float: left;
+    }
+    .float-right {
+      float: right;
+    }
+    .header {
+      padding-bottom: 50px; 
+    }
+    .header-box {
+      text-align: center;
+      width: 400px;
+      height: 120px;
+    }
+    .header-box .chumbnail img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      /* background: #000; */
+      display: inline-block;
+    }
+    .header-box .name-box {
+      width: 280px;
+      height: 100%;
+    }
+    .header-box h1 {
+      font-size: 42px;
+      margin: 0;
+      font-weight: bold;
+    }
+    .header-box p,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    .info-box .info-headline {
+      width: 100%;
+      border-bottom: 3px solid #000;
+    }
+    .info-box ul li:first-letter {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    li {
+      list-style: none;
+    }
+    .clearfix:before,
+    .clearfix:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .chunk {
+      padding-bottom: 30px;
+    }
+    .headline {
+      font-size: 20px;
+      width: 400px;
+      border-bottom: 3px solid #ccc;
+      margin-bottom: 30px;
+    }
+    .item {
+      padding-left: 70px;
+      padding-bottom: 20px;
+      border-left: 2px solid #000;
+      position: relative;
+    }
+    .item:before {
+      content: '';
+      border-radius: 50%;
+      border: 6px solid #000;
+      display: inline-block;
+      position: absolute;
+      left: -7px;
+      top: -2px;
+    }
+    .item-title {
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+    span {
+      color: #ccc;
+    }
+    .active-box {
+      width: 400px;
+    }
+    .captain {
+      font-size: 16px;
+      width: 300px;
+      height: 23px;
+      border-bottom: 3px solid #ccc;
+      margin-bottom: 30px;
+      line-height: 1;
+    }
+    .chart {
+      padding-left: 20px;
+      padding-bottom: 10px;
+      position: relative;
+    }
+    .chart-title {
+      padding-bottom: 10px;
+    }
+    .chart-title:before {
+      content: '';
+      border-radius: 50%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #000;
+      position: absolute;
+      left: -12px;
+      top: 1px;
+    }
+    .chart-title:after {
+      content: '﹢';
+      font-size: 25px;
+      display: inline-block;
+      position: absolute;
+      left: -14px;
+      top: -9px;
+    }
+    .skill-box {
+      width: 300px;
+    } 
+    .skill-box .skill-chart {
+      width: 100px;
+      height: 60px;
+      font-weight: bold;
+      position: relative;
+      margin: 0 25px;
+    }
+    .skill-chart:before {
+      content: '';
+      border-radius: 50%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #000;
+      position: absolute;
+      left: -35px;
+      top: -1px;
+    }
+    .skill-chart:after {
+      content: '﹢';
+      font-size: 25px;
+      display: inline-block;
+      position: absolute;
+      left: -36px;
+      top: -10px;
+    }
+  </style>
+</head>
+<body>
+<div class="layout wrap">
+  <div class="header clearfix">
+    <div class="header-box float-left">
+      <div class="chumbnail float-left">
+        <img src="http://i1.piimg.com/1949/ff76cfaf03474aab.jpg" alt="头像">
+      </div>
+      <div class="name-box float-right">
+        <h1>Dean Wang</h1>
+        <p>Grapic& Web Desiger</p>
+      </div>
+    </div>
+    <div class="info-box float-right">
+      <div class="info-headline">CONTACTS</div>
+      <ul>
+        <li>A&nbsp;&nbsp;59Somewhere Street NY,USA</li>
+        <li>M&nbsp;&nbsp;18639124212</li>
+        <li>E&nbsp;&nbsp;steve@gmail.com</li>
+        <li>B&nbsp;&nbsp;www.desgin.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="chunk">
+      <div class="headline">WORK EXPERIENCE</div>
+      <ui>
+        <li class="item">
+          <div class="item-title">
+            Marketplaces /  
+            <span>2012 - 2013</span>
+          </div>
+          <div class="item-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet tempore deleniti dignissimos officiis earum enim natus possimus, error ullam est totam saepe? Mollitia minima provident, eum assumenda aliquid maiores ipsum.
+          </div>
+        </li>
+        <li class="item">
+          <div class="item-title">
+            Apple Inc.  
+            <span>2013 - 2014</span>
+          </div>
+          <div class="item-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam optio id inventore laboriosam consequatur culpa itaque! Quas maxime laborum totam accusamus magnam, deleniti eaque aliquam odit incidunt! Perferendis officiis, tenetur.
+          </div>
+        </li>
+        <li class="item">
+          <div class="item-title">
+            Aroma Bar Network /  
+            <span>2014 - Now</span>
+          </div>
+          <div class="item-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quia fugit inventore adipisci, repudiandae rerum, quos nulla totam magnam sint cum, laudantium aliquid, optio delectus repellendus a quod laborum fugiat!
+          </div>
+        </li>
+      </ui>
+    </div>
+    <div class="chunk">
+      <div class="headline">EDUCATION</div>
+      <ui>
+        <li class="item">
+          <div class="item-title">
+            College /  
+            <span>2008 - 2011</span><br />
+            <span>Visual Design Communication</span>
+          </div>
+          <div class="item-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem unde atque porro corporis. Aliquid illo labore cupiditate culpa modi ea blanditiis explicabo magni, nemo maxime esse iste laborum qui! Officia?
+          </div>
+        </li>
+        <li class="item">
+          <div class="item-title">
+            University  
+            <span>2011 - 2014</span><br />
+            <span>Information System</span>
+          </div>
+          <div class="item-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum aspernatur ex ab atque dolore, illo, quibusdam tempora soluta assumenda odit porro temporibus itaque iusto perspiciatis, esse aperiam dolores perferendis ullam.
+          </div>
+        </li>
+      </ui>
+    </div>
+    <div class="chunk clearfix">
+      <div class="active-box float-left">
+        <div class="captain">
+          EXTRA CURRICULAR ACTIVITIES
+        </div>
+        <ul>
+          <li class="chart">
+            <div class="chart-title">
+              Volunteer
+            </div>
+            <div class="chart-content">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta assumenda nesciunt quos ullam sint nisi, suscipit alias eum, tenetur, commodi natus iusto.
+            </div>
+          </li>
+          <li class="chart">
+            <div class="chart-title">
+              Volunteer
+            </div>
+            <div class="chart-content">
+              Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="skill-box float-right">
+        <div class="captain">
+          PROFESION SKILLS
+        </div>
+        <ul class="clearfix">
+          <li class="skill-chart float-left">HTML&CSS</li>
+          <li class="skill-chart float-left">JQUERY</li>
+          <li class="skill-chart float-left">JAVASCRIPT</li>
+          <li class="skill-chart float-left">PHOTOSHOP</li>
+          <li class="skill-chart float-left">JAVA</li>
+          <li class="skill-chart float-left">ILLUSTRATOR</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
