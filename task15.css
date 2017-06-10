@@ -1,0 +1,657 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 768px;
+}
+
+body {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2,
+h3,
+h4 {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+h2,
+h3 {
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+section {
+    padding: 150px 0;
+}
+
+section:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+.container {
+    max-width: 1170px;
+    min-width: 768px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+::selection {
+    text-shadow: none;
+    background: #fed136;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 312579 */
+    src: url('https://at.alicdn.com/t/font_tr68jrop6wk1q0k9.eot');
+    src: url('https://at.alicdn.com/t/font_tr68jrop6wk1q0k9.eot?#iefix') format('embedded-opentype'), url('https://at.alicdn.com/t/font_tr68jrop6wk1q0k9.woff') format('woff'), url('https://at.alicdn.com/t/font_tr68jrop6wk1q0k9.ttf') format('truetype'), url('https://at.alicdn.com/t/font_tr68jrop6wk1q0k9.svg#iconfont') format('svg');
+}
+
+
+/* Navbar */
+
+nav {
+    position: fixed;
+    padding: 10px 0;
+    width: 100%;
+    min-width: 768px;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    box-shadow: 0 1px 3px #333;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+    float: left;
+    margin-left: 30px;
+    line-height: 50px;
+    font-size: 23px;
+    color: #f6bf01;
+    font-style: italic;
+    text-shadow: 0 1px 1px #000;
+}
+
+.logo:hover {
+    font-size: 24px;
+    text-shadow: 0 1px 5px #f6bf01;
+}
+
+.navigation {
+    float: right;
+    margin-left: -15px;
+    margin-right: 40px;
+}
+
+.navigation div {
+    float: left;
+    position: relative;
+    display: block;
+}
+
+.navigation div a {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px;
+    font-weight: 400;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.navigation div a:hover {
+    color: #fed136;
+}
+
+
+/* header */
+
+header {
+    background-image: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg);
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    min-width: 768px;
+}
+
+header .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+}
+
+.intro-title {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+
+.intro-subtitle {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+}
+
+.btn-x1 {
+    color: #fff;
+    background: #fed136;
+    border: 1px solid #f6bf01;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 20px 40px;
+    display: inline-block;
+}
+
+.btn-x1:hover {
+    background-color: #f6bf01;
+}
+
+
+/*section-services*/
+
+.heading {
+    width: 100%;
+    float: left;
+}
+
+.section-title {
+    color: rgb(51, 51, 51);
+    font-size: 40px;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #777;
+    font-size: 16px;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 75px;
+}
+
+#services .intro-title {
+    color: rgb(51, 51, 51);
+    margin: 15px 0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+#services .intro-text {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0 0 10px;
+}
+
+#services .box {
+    font-family: "iconfont";
+    background: #fed136;
+    border: 1px solid #f6bf01;
+    border-radius: 50%;
+    font-size: 50px;
+}
+
+.col-1 {
+    float: left;
+    width: 33.3%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.box {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.box-1:before {
+    content: "\e603";
+    color: #fff;
+}
+
+.box-2:before {
+    content: "\e677";
+    color: #fff;
+}
+
+.box-3:before {
+    content: "\e642";
+    color: #fff;
+}
+
+
+/* section-portfolio */
+
+#portfolio * {
+    z-index: 2;
+}
+
+.portfolio-item {
+    margin: 0 0 30px;
+}
+
+.portfolio-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    color: #fed136;
+    outline: 0;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.portfolio-hover:hover {
+    opacity: 0.9;
+}
+
+.portfolio-hover {
+    background: rgba(254, 209, 54, 0.9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.portfolio-hover-content {
+    font-family: "iconfont";
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 50px;
+    text-align: center;
+    top: 50%;
+    margin-top: -30px;
+    color: #fff;
+}
+
+.plus:before {
+    content: "\e601";
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.portfolio-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+}
+
+.portfolio-caption h4 {
+    text-transform: none;
+    margin: 0;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+}
+
+.portfolio-caption p {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    margin: 0;
+}
+
+
+/* section-about */
+
+.col-2 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 2px;
+    background-color: #f1f1f1;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline>li {
+    margin-bottom: 100px;
+    min-height: 170px;
+    position: relative;
+}
+
+.timeline>li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline>li .timeline-image {
+    width: 170px;
+    height: 170px;
+    margin-left: -85px;
+    left: 50%;
+    position: absolute;
+    z-index: 100;
+    background-color: #fed136;
+    color: #fff;
+    border-radius: 100%;
+    border: 7px solid #f1f1f1;
+    text-align: center;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.timeline>li .timeline-panel {
+    padding: 0 20px 20px 100px;
+    width: 41%;
+    float: left;
+    text-align: right;
+    position: relative;
+}
+
+.timeline .timeline-heading h4 {
+    margin-top: 0;
+    color: inherit;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.timeline .timeline-heading h4.subheading {
+    text-transform: none;
+}
+
+.timeline .timeline-body p {
+    font-family: sans-serif;
+}
+
+.timeline>li .timeline-image h4 {
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+.timeline .timeline-inverted>.timeline-panel {
+    padding: 0 100px 20px 20px;
+    float: right;
+    text-align: left;
+}
+
+
+/* section-team */
+
+.team-member {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-member img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+    font-size: 18px;
+}
+
+.team-member p {
+    margin-top: 0;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#team .fa {
+    float: left;
+    font-family: "iconfont";
+    font-size: 40px;
+}
+
+.box-4:before {
+    content: "\e698";
+    color: #222;
+}
+
+.box-5:before {
+    content: "\e600";
+    color: #222;
+}
+
+.box-6:before {
+    content: "\e608";
+    color: #222;
+}
+
+.team-text {
+    width: 66.66666667%;
+    margin-left: 16.66666667%;
+}
+
+.team-text p {
+    font-size: 16px;
+}
+
+
+/* aside */
+
+aside.clients img {
+    margin: 50px auto;
+}
+
+.col-3 {
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+/* section-contact */
+
+section#contact {
+    background-color: #222;
+    background-image: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/map-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#contact h2 {
+    color: #fff;
+}
+
+#contact .col-4 {
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#contact .col-5 {
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#contact .col-6 {
+    width: 100%;
+}
+
+section#contact .form-group {
+    margin-bottom: 25px;
+}
+
+section#contact .form-group-3 {
+    margin-bottom: 25px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+section#contact .form-group input.form-control {
+    height: auto;
+    margin: 0;
+    padding: 20px;
+}
+
+section#contact .form-group textarea.form-control {
+    height: 236px;
+    padding: 20px;
+}
+
+
+/* footer */
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span.copyright {
+    line-height: 40px;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    text-transform: none;
+    font-size: 15px;
+}
+
+footer span.fa {
+    float: left;
+    font-family: "iconfont";
+    font-size: 40px;
+    line-height: 1em;
+}
+
+.quicklinks a {
+    margin-bottom: 0;
+    line-height: 40px;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: none;
+    color: #fed136;
+    font-size: 15px;
+}
