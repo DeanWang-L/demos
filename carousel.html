@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+<style>
+.carousel ul,
+.carousel li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.carousel {
+  width: 320px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel .img-ct li {
+  float: left;
+}
+
+.carousel .img-ct {
+  position: absolute;
+  width: 1280px;
+  overflow: hidden;
+}
+
+.carousel .img-ct img {
+  width: 320px;
+  height: 180px;
+  cursor: default;
+}
+
+.carousel .arrow {
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  margin-top: -15px;
+  display: inline-block;
+  color: #fff;
+}
+
+.carousel .arrow:hover {
+  opacity: 0.4;
+  background: #ccc;
+  border: 1px solid #000;
+  color: #000;
+  width: 26px;
+  height: 26px;
+}
+
+.carousel .pre {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+.carousel .bullet {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  font-size: 0;
+}
+
+.carousel .bullet>li {
+  width: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  padding: 3px;
+  cursor: pointer;
+  font-size: 1px;
+  color: #ccc;
+}
+
+.carousel .bullet .active {
+  background: #ccc;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+  <div class="carousel">
+    <ul class="img-ct">
+      <li data-id="1">
+        <a href="#"><img src="http://cdn.jirengu.com/book.jirengu.com/img/2.jpg" alt=""></a>
+      </li>
+      <li data-id="2">
+        <a href="#"><img src="http://cdn.jirengu.com/book.jirengu.com/img/3.jpg" alt=""></a>
+      </li>i
+      <li data-id="3">
+        <a href="#"><img src="http://cdn.jirengu.com/book.jirengu.com/img/4.jpg" alt=""></a>
+      </li>
+      <li data-id="4">
+        <a href="#"><img src="http://cdn.jirengu.com/book.jirengu.com/img/5.jpg" alt=""></a>
+      </li>
+    </ul>
+    <a href="#" class="pre arrow"><</a>
+    <a href="#" class="next arrow">></a>
+    <ul class="bullet">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+  <script>
+  var $imgCt = $(".carousel .img-ct");
+  var $img = $(".carousel .img-ct li");
+  var imgCount = $img.length;
+  var imgWidth = $img.width();
+  var $pre = $(".carousel .pre");
+  var $next = $(".carousel .next");
+  var $bullets = $(".carousel .bullet>li");
+  var isAnimate = false;
+  var pageIndex = 0;
+
+  $imgCt.append($img.first().clone());
+  $imgCt.prepend($img.last().clone());
+
+  $imgCt.css("width", (imgCount + 2)*imgWidth);
+  $imgCt.css("left", -imgWidth);
+
+  setInterval(function(){
+    nextPage(1);
+  }, 1500);
+
+  $next.click(function(){
+    nextPage(1);
+  });
+  $pre.click(function(){
+    prePage(1);
+  });
+
+  $bullets.click(function(){
+    var index = $(this).index();
+    if(index > pageIndex){
+      nextPage(index - pageIndex);
+    } else if (index < pageIndex){
+      prePage(pageIndex - index);
+    }
+  });
+
+  function prePage(len){
+    if(isAnimate) return;
+    isAnimate = true;
+    $imgCt.animate({
+      left: "+=" + len*imgWidth
+    }, 150, function(){
+      pageIndex -= len;
+      if(pageIndex < 0){
+        pageIndex = imgCount - 1;
+        $imgCt.css("left", -imgCount*imgWidth);
+      }
+      console.log(pageIndex);
+      setBullet();
+      isAnimate = false;
+    });
+  }
+
+  function nextPage(len){
+    if(isAnimate) return;
+    isAnimate = true;
+    $imgCt.animate({
+      left: "-=" + len*imgWidth
+    }, 150, function(){
+      pageIndex += len;
+      if(pageIndex === imgCount){
+        pageIndex = 0;
+        $imgCt.css("left", -imgWidth);
+      }
+      console.log(pageIndex);
+      setBullet();
+      isAnimate = false;
+    });
+  }
+
+  function setBullet(){
+    $bullets.removeClass("active")
+    .eq(pageIndex)
+    .addClass("active");
+  }
+  </script>
+</body>
+</html>
